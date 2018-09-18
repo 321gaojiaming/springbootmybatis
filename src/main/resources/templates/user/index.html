@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<!--<input id="userName" type="text" >-->
+亲爱的<label id="userName"/>
+<script type="text/javascript">
+    function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null)
+        return decodeURI(r[2]);
+    return null;
+}
+    var id=getQueryString("id");
+    var userName=getQueryString("username");
+    //把id显示到input里
+/*
+    window.onload=function(){
+        document.getElementById('userName').value=getQueryString('userName')
+    }
+*/
+    window.onload=function(){
+        var label=document.getElementById('userName')
+        label.innerText=userName;
+        $("#userName").html("username");
+    }
+
+</script>
+
+</body>
+</html>
